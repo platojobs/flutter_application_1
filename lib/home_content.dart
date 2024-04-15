@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -8,14 +7,15 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text("demo"),
       ),
-      body: const HomeContent(),
+      body: HomeContent("hello"),
     );
   }
 }
 
 class HomeContent extends StatefulWidget {
-  const HomeContent({super.key});
 
+  final String message;
+  HomeContent(this.message);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -33,13 +33,16 @@ class HomeContentState extends State<HomeContent> {
         children: <Widget>[
           Checkbox(
               value: check,
-              fillColor: check ? const MaterialStatePropertyAll(Colors.blue): const MaterialStatePropertyAll(Colors.white),
+              fillColor: check
+                  ? const MaterialStatePropertyAll(Colors.blue)
+                  : const MaterialStatePropertyAll(Colors.white),
               onChanged: (value) {
                 setState(() {
                   check = value!;
                 });
               }),
           const Text("租售协议", style: TextStyle(fontSize: 20)),
+          Text("${widget.message}"),
         ],
       ),
     );
