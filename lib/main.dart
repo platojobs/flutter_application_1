@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 //import 'package:flutter_application_1/home_page.dart';
 import 'package:flutter_application_1/home_content.dart';
 import 'package:flutter_application_1/home_body.dart';
@@ -22,7 +24,8 @@ class MyApp extends StatelessWidget {
       //home: const HomePage(title: '学习监听listview'),
       //home: HomeBody(),
       // home: Home(),
-      home: const MyTextField(),
+      // home: MyTextField(),
+      home: PTestWidget(),
     );
   }
 }
@@ -58,8 +61,10 @@ class MyWidget extends StatelessWidget {
 }
 
 class MyTextField extends StatelessWidget {
-  const MyTextField({super.key});
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
+  MyTextField({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +74,7 @@ class MyTextField extends StatelessWidget {
       body: Column(
         children: <Widget>[
           TextField(
+            controller: usernameController,
             textAlign: TextAlign.left,
             decoration: const InputDecoration(
               hintText: "请输入内容",
@@ -84,6 +90,7 @@ class MyTextField extends StatelessWidget {
             height: 10,
           ),
           TextField(
+            controller: passwordController,
             textAlign: TextAlign.left,
             decoration: const InputDecoration(
               hintText: "请输入密码",
@@ -98,11 +105,24 @@ class MyTextField extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          ElevatedButton(
+          SizedBox(
+            width: double.infinity,
+            height: 40,
+            child: TextButton(
               onPressed: () {
                 print("点击了按钮");
+                final username = usernameController.text;
+                final password = passwordController.text;
+                print("账号：$username 密码：$password");
               },
-              child: const Text("登录",style: TextStyle(fontSize: 20,color: Colors.blue),)),
+              style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+              child: const Text(
+                "登录",
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -121,6 +141,107 @@ class MyIcon extends StatelessWidget {
       body: const Icon(
         Icons.pets,
         size: 100,
+      ),
+    );
+  }
+}
+
+class TestWidget extends StatelessWidget {
+  const TestWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Test"),
+        backgroundColor: Colors.blue,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        verticalDirection: VerticalDirection.down,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 80,
+            height: 60,
+            color: Colors.red,
+            child: const Text("hello",style: TextStyle(fontSize: 20),),
+          ),
+          Container(
+            width: 120,
+            height: 100,
+            color: Colors.orange,
+            child: const Text("abd",style: TextStyle(fontSize: 30),),
+          ),
+          Container(
+            width: 90,
+            height: 60,
+            color: Colors.blue,
+            child: const Text("world",style: TextStyle(fontSize: 13),),
+          ),
+          Container(
+            width: 50, 
+            height: 120,
+            color: Colors.purple,
+            child: const Text("Jobs",style: TextStyle(fontSize: 40),),
+          
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+class PTestWidget extends StatelessWidget {
+  const PTestWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("PTestWidget"),
+        backgroundColor: Colors.blue,
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        textBaseline: TextBaseline.ideographic,
+        children: [
+          Expanded(child: Container(
+            width: 180,
+            height: 60,
+            color: Colors.red,
+          
+          ),),
+           Container(
+            width: 120,
+            height: 100,
+            color: Colors.orange,
+            
+          ),
+          
+
+          Container(
+            width: 90,
+            height: 60,
+            color: Colors.blue,
+            
+          ),
+          Container(
+            width: 50, 
+            height: 120,
+            color: Colors.purple,
+            
+          
+          ),
+        ],
       ),
     );
   }
