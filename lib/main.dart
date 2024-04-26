@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/MGridView.dart';
+import 'package:flutter_application_1/longListView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter Demo"),
       ),
-      body: const MGridView(),
+      body:  LongListViewWidget(items: List.generate(100, (index) => "单元格:$index")),
       ),
     );
   }
