@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/longListView.dart';
+import 'package:flutter_application_1/sliver_customScrollView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter Demo"),
       ),
-      body:  LongListViewWidget(items: List.generate(100, (index) => "单元格:$index")),
+      body: const Sliver_customScrollView(),
       ),
     );
   }
