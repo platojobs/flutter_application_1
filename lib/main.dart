@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/parallaxRecipe.dart';
+import 'package:flutter_application_1/maxcrossTest.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter Demo"),
       ),
-      body:  ParallaxRecipe(),
+      body:  const maxcrossTest(),
       ),
     );
   }
