@@ -1,10 +1,11 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/bottomNavigationWidget.dart';
 import 'package:flutter_application_1/switchAndCheckBoxTestRoute.dart';
 import 'package:flutter_application_1/firstRoute.dart';
-
+import 'package:flutter_application_1/FormTestRoute.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -21,58 +22,69 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-       home:  const FirstPage(),
+      //  home:  const FirstPage(),
 
-      // home: Scaffold(
-      //   appBar: AppBar(
-      //     title: const Text('Flutter Demo Home Page'),
-      //   ),
-      //   body: const SwitchAndCheckBoxTestRoute(),
-      // ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter Demo Home Page'),
+        ),
+        body: const FormTestRoute(),
+      ),
     );
   }
 }
 
-class DefaultTextWidget extends StatelessWidget {
-  const DefaultTextWidget({super.key});
-  final imageurl =
-      "https://img2.baidu.com/it/u=3227619927,365499885&fm=253&fmt=auto&app=120&f=JPEG?w=938&h=500";
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Container(
+  padding: EdgeInsets.all(10),
+   child:  const Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-       const  Text("data", style: TextStyle(color: Colors.red)),
-        ClipOval(
-           child: Image.network(
-          imageurl,
-          fit: BoxFit.cover,
-          width: 150,
-          height: 150,
-        )),
-        //圆角图片
-        ClipRRect(
-           borderRadius: BorderRadius.circular(50),
-           child: Image.network(
-          imageurl,
-          fit: BoxFit.cover,
-          width: 150,
-          height: 150,
+        SizedBox(height: 10,),
+         TextField(
+            autocorrect: true,
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.email),
+              border:InputBorder.none,
+              hintText: 'Enter your email',
+              labelText: '邮箱',
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 1.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.blue, width: 1.0),
+              )
+            ),
         ),
+        SizedBox(height: 20,),
+         TextField(
+            autocorrect: true,
+            keyboardType: TextInputType.visiblePassword,
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.security),
+              border:InputBorder.none,
+              hintText: 'Enter your password',
+              labelText: '密码',
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 1.0),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.blue, width: 1.0),
+              )
+            ),
         ),
-        Container(
-          width: 150,
-          height: 150,
-          clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(75)
-          ),
-          child: Image.network(imageurl,fit: BoxFit.cover,),
 
-        ),
+      
       ],
+    ),
+
+
     );
   }
 }
-
