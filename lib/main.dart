@@ -1,12 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/AppBarExample.dart';
 import 'package:flutter_application_1/bottomNavigationWidget.dart';
 import 'package:flutter_application_1/switchAndCheckBoxTestRoute.dart';
 import 'package:flutter_application_1/firstRoute.dart';
 import 'package:flutter_application_1/sliverCustomScrollView.dart';
-
+import 'package:flutter_application_1/launchTest.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -21,7 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        brightness: Brightness.light,
         primarySwatch: Colors.blue,
+        primaryColor: Colors.red,
+
+        
       ),
        // home:  const AppBarExample(),
 
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter Demo Home Page'),
         ),
-        body: const TCustomScrollView(),
+        body: const UrlLauncherButton(),
       ),
     );
   }
@@ -41,7 +44,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-  padding: EdgeInsets.all(10),
+  padding:const EdgeInsets.all(10),
    child:  const Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
