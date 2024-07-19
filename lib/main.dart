@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_application_1/AppBarExample.dart';
-//import 'package:flutter_application_1/bottomNavigationWidget.dart';
-///import 'package:flutter_application_1/switchAndCheckBoxTestRoute.dart';
 
-//import 'package:flutter_application_1/sliverCustomScrollView.dart';
-//import 'package:flutter_application_1/launchTest.dart';
-import 'package:flutter_application_1/fitbox_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/fitbox_stu.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
@@ -31,7 +26,7 @@ class MyApp extends StatelessWidget {
           title:const Text("my app bar"),
           backgroundColor: Colors.blue,
         ),
-        body:  const MyFitBoxWidget(),
+        body: Image.asset("images/test.jpeg"),
       ),
     );
   }
