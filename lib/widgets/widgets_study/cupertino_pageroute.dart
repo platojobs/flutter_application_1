@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_application_1/secondRoute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/secondRoute.dart';
 
 class CupertinoPageRouteWidget extends StatelessWidget {
   const CupertinoPageRouteWidget({super.key});

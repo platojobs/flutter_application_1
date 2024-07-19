@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/firstRoute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/firstRoute.dart';
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
 

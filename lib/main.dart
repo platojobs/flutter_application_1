@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_pprotapp/widgets/widgets_study/fitbox_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/scaffoldRoute_stu.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
@@ -21,13 +21,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.red,
       ),
       // home:  const AppBarExample(),
-      home:  Scaffold(
-        appBar: AppBar(
-          title:const Text("my app bar"),
-          backgroundColor: Colors.blue,
-        ),
-        body: Image.asset("images/test.jpeg"),
-      ),
+      home: ScaffoldRoute_stu(),
     );
   }
 }
