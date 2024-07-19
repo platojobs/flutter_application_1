@@ -22,6 +22,7 @@ class TCustomScrollView extends StatelessWidget {
           itemCount: 28,
           findChildIndexCallback: (key) {
             print(key.toString());
+            return key.hashCode;
           },
         ),
         const SliverToBoxAdapter(

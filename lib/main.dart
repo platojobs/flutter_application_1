@@ -1,11 +1,12 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/AppBarExample.dart';
-import 'package:flutter_application_1/bottomNavigationWidget.dart';
-import 'package:flutter_application_1/switchAndCheckBoxTestRoute.dart';
-import 'package:flutter_application_1/firstRoute.dart';
-import 'package:flutter_application_1/sliverCustomScrollView.dart';
-import 'package:flutter_application_1/launchTest.dart';
+//import 'package:flutter_application_1/AppBarExample.dart';
+//import 'package:flutter_application_1/bottomNavigationWidget.dart';
+///import 'package:flutter_application_1/switchAndCheckBoxTestRoute.dart';
+
+//import 'package:flutter_application_1/sliverCustomScrollView.dart';
+//import 'package:flutter_application_1/launchTest.dart';
+import 'package:flutter_application_1/transform.dart';
+
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -23,16 +24,14 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
         primaryColor: Colors.red,
-
-        
       ),
-       // home:  const AppBarExample(),
-
-      home: Scaffold(
+      // home:  const AppBarExample(),
+      home:  Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter Demo Home Page'),
+          title:const Text("my app bar"),
+          backgroundColor: Colors.blue,
         ),
-        body: const UrlLauncherButton(),
+        body:  MyTransformWidget(),
       ),
     );
   }
@@ -44,51 +43,49 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-  padding:const EdgeInsets.all(10),
-   child:  const Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SizedBox(height: 10,),
-         TextField(
+      padding: const EdgeInsets.all(10),
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          TextField(
             autocorrect: true,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.email),
-              border:InputBorder.none,
-              hintText: 'Enter your email',
-              labelText: '邮箱',
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue, width: 1.0),
-              )
-            ),
-        ),
-        SizedBox(height: 20,),
-         TextField(
+                prefixIcon: Icon(Icons.email),
+                border: InputBorder.none,
+                hintText: 'Enter your email',
+                labelText: '邮箱',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue, width: 1.0),
+                )),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          TextField(
             autocorrect: true,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.security),
-              border:InputBorder.none,
-              hintText: 'Enter your password',
-              labelText: '密码',
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1.0),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blue, width: 1.0),
-              )
-            ),
-        ),
-
-      
-      ],
-    ),
-
-
+                prefixIcon: Icon(Icons.security),
+                border: InputBorder.none,
+                hintText: 'Enter your password',
+                labelText: '密码',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.blue, width: 1.0),
+                )),
+          ),
+        ],
+      ),
     );
   }
 }
