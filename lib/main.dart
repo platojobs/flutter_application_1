@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 //import 'package:flutter_application_1/sliverCustomScrollView.dart';
 //import 'package:flutter_application_1/launchTest.dart';
-import 'package:flutter_application_1/transform.dart';
+import 'package:flutter_application_1/fitbox_stu.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           title:const Text("my app bar"),
           backgroundColor: Colors.blue,
         ),
-        body:  MyTransformWidget(),
+        body:  const MyFitBoxWidget(),
       ),
     );
   }
