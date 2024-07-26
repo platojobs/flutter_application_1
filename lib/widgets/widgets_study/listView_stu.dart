@@ -220,27 +220,136 @@ class ListViewWithHeaderView extends StatelessWidget {
 class CustomListView extends StatelessWidget {
    CustomListView({super.key});
   final names = generateWordPairs().take(20).map((e)=> e.asPascalCase).toList();
-
   @override
   Widget build(BuildContext context) {
     return ListView.custom(
-        childrenDelegate:
+      childrenDelegate:
 
-            //SliverChildListDelegate(
-        //           List.generate(names.length, (index)=> ListTile(title: Text(names[index])) ),
-        //         ),
+      //SliverChildListDelegate(
+      //           List.generate(names.length, (index)=> ListTile(title: Text(names[index])) ),
+      //         ),
 
-        SliverChildBuilderDelegate((BuildContext context, int index){
-          return ListTile(title: Text(names[index]));
-       },childCount: names.length),
-       itemExtent: 30,
+      SliverChildBuilderDelegate((BuildContext context, int index) {
+        return ListTile(title: Text(names[index]));
+      }, childCount: names.length),
+      itemExtent: 30,
 
     );
   }
 
-  
-
 }
 
+
+class MMListViewWithController extends StatefulWidget {
+  const MMListViewWithController({super.key});
+
+  @override
+  State<MMListViewWithController> createState() => _MMListViewWithControllerState();
+  
+}
+
+class _MMListViewWithControllerState extends State<MMListViewWithController> {
+  final names = generateWordPairs().take(80).map((e)=> e.asPascalCase).toList();
+  final _contoller = ScrollController();
+  bool showTotopButton = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    
+    _contoller.addListener((){
+      print(_contoller.offset);
+      if(_contoller.offset < 100 &&showTotopButton){
+           setState(() {
+             showTotopButton = false;
+           });
+      }else if (_contoller.offset >=1000&& showTotopButton==false){
+          setState(() {
+            showTotopButton = true;
+          });
+      }
+    });
+    
+    
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ListView"),
+      ),
+      body: ListView.custom(
+        childrenDelegate: SliverChildBuilderDelegate((BuildContext context, int index)
+        => ListTile(title: Text(names[index]),),childCount: names.length
+        ),
+        itemExtent: 30,
+        controller: _contoller,
+
+      ),
+       floatingActionButton: !showTotopButton ?null :FloatingActionButton(
+         foregroundColor: Colors.white,
+         backgroundColor: Colors.blue,
+         shape: const CircleBorder(),
+         onPressed: (){
+         _contoller.animateTo(.0, duration: Duration(milliseconds: 200), curve: Curves.ease);
+       },
+         child: Icon(Icons.arrow_upward),
+       ),
+    );
+  }
+}
+
+
+
+class ScrollNotificationTestRoute extends StatefulWidget {
+  const ScrollNotificationTestRoute({super.key});
+
+  @override
+  State<ScrollNotificationTestRoute> createState() => _ScrollNotificationTestRouteState();
+}
+
+class _ScrollNotificationTestRouteState extends State<ScrollNotificationTestRoute> {
+  String _progress = "0%";
+  final names = generateWordPairs().take(80).map((e)=> e.asPascalCase).toList();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+        child: NotificationListener<ScrollNotification>(
+          onNotification:(ScrollNotification notice){
+            double notice_progress = notice.metrics.pixels / notice.metrics.maxScrollExtent;
+            setState(() {
+              _progress = "${(notice_progress*100).toInt()}%";
+              print(_progress);
+            });
+            print("BottomEdge:${notice.metrics.extentAfter == 0}");
+            return false;
+
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              ListView.builder(
+                  itemBuilder: itemBuilder,
+                  itemCount: names.length,
+                  itemExtent: 40,
+              ),
+              CircleAvatar(
+                radius: 30.0,
+                child: Text(_progress,style: TextStyle(color: Colors.white),),
+                backgroundColor: Colors.blue,
+              )
+            ],
+          ),
+
+        ),
+    );
+  }
+
+  Widget itemBuilder(BuildContext context,int index){
+    return ListTile(title:  Text(names[index]),);
+  }
+}
 
 

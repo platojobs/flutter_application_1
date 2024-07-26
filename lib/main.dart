@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_pprotapp/widgets/widgets_study/listView_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/animatedList_stu.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
@@ -15,18 +15,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       title: 'Flutter Demo',
-      // theme: ThemeData(
-      //   brightness: Brightness.light,
-      //   primarySwatch: Colors.blue,
-      //   primaryColor: Colors.red,
-      // ),
-      // home:  const AppBarExample(),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.blue,
+        primaryColor: Colors.red,
+      ),
+    //  home:  const AppBarExample(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("ListView"),
         ),
-        body: PJListBuilderWithSeparatedView(),
+        body: const MMAnimatedList(),
       ),
+
     );
   }
 }
