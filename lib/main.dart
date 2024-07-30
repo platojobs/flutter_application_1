@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_pprotapp/widgets/widgets_study/animatedList_stu.dart';
-
+import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/customScrollView_stu.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -20,12 +20,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         primaryColor: Colors.red,
       ),
-    //  home:  const AppBarExample(),
+    //  home:   DefaultTabbarView(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("ListView"),
         ),
-        body: const MMAnimatedList(),
+        body:  MMCustomScrollView(),
       ),
 
     );

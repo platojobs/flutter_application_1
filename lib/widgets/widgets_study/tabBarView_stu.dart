@@ -66,7 +66,26 @@ class DefaultTabbarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(length: _tabs.length,
-        child:const TabbrViewSample()
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.orange,
+            title: Text(_tabs[0]),
+            bottom: TabBar(labelColor: Colors.white,
+                unselectedLabelColor: Colors.black,
+                tabs: _tabs.map((e) =>Tab(text: e,)).toList()),
+          ),
+          body: TabBarView(
+              children: _tabs.map( (e) =>
+                KeepAliveWrapper(
+                    keepAlive: true,
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(e,textScaler:const TextScaler.linear(3)),
+                    )
+                )
+              ).toList(),
+          ),
+        )
     );
   }
 }
