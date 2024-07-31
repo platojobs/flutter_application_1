@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/ChangeNotifierProviderDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/NestedScrollView_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/InheritedWidget_stu.dart';
 
 import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/customScrollView_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -20,12 +23,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         primaryColor: Colors.red,
       ),
-    //  home:   DefaultTabbarView(),
+    //  home:   NestedScrollView_stu(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("ListView"),
         ),
-        body:  MMCustomScrollView(),
+        body:  MMShareDataProviderRoute(),
       ),
 
     );
