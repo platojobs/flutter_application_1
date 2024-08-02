@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/Alert_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/ChangeNotifierProviderDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/NestedScrollView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/InheritedWidget_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/colorsAndTheme_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/futureBuilder_stu.dart';
 
 import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
@@ -12,23 +15,30 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.blue,
-        primaryColor: Colors.red,
+        brightness: Brightness.light, //深色还是浅色
+        primarySwatch: Colors.blue, //主题色样本
+        primaryColor: Colors.red, //决定导航栏的颜色
+        cardColor: Colors.black,//卡片的颜色
+        dividerColor: Colors.green,//分割线的颜色
+        buttonTheme: ButtonThemeData(
+          textTheme: ButtonTextTheme.accent,
+          buttonColor: Colors.blue,
+        ),
+        fontFamily: "Oswald",
+
       ),
-    //  home:   NestedScrollView_stu(),
+     // home:   ThemeRoute(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("ListView"),
         ),
-        body:  MMShareDataProviderRoute(),
+        body:   const MMDefaultListSectView(),
       ),
 
     );
