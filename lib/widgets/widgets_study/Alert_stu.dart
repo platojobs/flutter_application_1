@@ -1,6 +1,11 @@
 
+import 'dart:ffi';
+import 'dart:typed_data';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/widgets.dart';
 class MMAletView extends StatelessWidget {
   MMAletView({super.key});
   final names = generateWordPairs().take(20).map((e)=> e.asPascalCase).toList();
@@ -27,12 +32,20 @@ class MMAletView extends StatelessWidget {
       }
       */
 
-      // 第三个
+      /* 第三个
       int? selectwordsIndex = await showlistAlert(context, names,null);
       if (selectwordsIndex != null){
         print(names[selectwordsIndex]);
       }
     },
+    */
+      bool? delete = await showCusonmAlert(context);
+      if (delete==null) {
+        print("取消删除");
+      }else{
+        print("确定删除");
+      }
+      },
       child: Text("弹框"),
 
     );
@@ -136,6 +149,35 @@ Future<int?>showlistAlert(BuildContext context,List<String> names , int? default
 
 }
 
+//自定义的
+Future<T?>showCustomDialog<T>({required BuildContext context, bool dismissbale = true,required WidgetBuilder builder,ThemeData? theme}){
+   final ThemeData date = Theme.of(context);
+
+   return showGeneralDialog(context: context, pageBuilder: (BuildContext buildContext, Animation<double> animation,
+       Animation<double> secondaryAnimation){
+        final Widget pagechild = Builder(builder: builder);
+        return SafeArea(
+          child: Builder(builder: (BuildContext context){
+          return theme != null ? Theme(data: theme, child: pagechild): pagechild;
+        }),
+        );
+     },
+     barrierDismissible: dismissbale,
+     barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+     barrierColor: Colors.black45,
+     transitionDuration: const Duration(milliseconds: 150),
+     //对话框动画
+     transitionBuilder: (BuildContext context,  Animation<double> animation, Animation<double> secondaryAnimation,
+      Widget child){
+      return ScaleTransition(
+      scale: CurvedAnimation(parent: animation, curve: Curves.easeOut),
+      child: child,
+   );
+     },
+     );
+}
+
+
 
 class MMDefaultListSectView extends StatefulWidget {
   const MMDefaultListSectView({super.key});
@@ -161,5 +203,153 @@ class _MMDefaultListSectViewState extends State<MMDefaultListSectView> {
     },
       child: Text(selectwordsIndex==null?"弹框":names[selectwordsIndex!],),
     );
+  }
+}
+
+
+//自定义弹框
+Future<bool?>showCusonmAlert(BuildContext context){
+  bool? _subFilesDelete = false;
+   return showCustomDialog<bool>(
+     context: context,
+     builder: (context){
+       return AlertDialog(
+         title: const Text("提示"),
+         content: const Text("您确定要删除当前文件吗?"),
+         actions: [
+           Row(
+             children: [
+               const Text("同时删除子目录？"),
+               MMCheckBoxView(
+                 value: _subFilesDelete,
+                   onChanged: (e){
+
+                 _subFilesDelete = e!;
+                 print("===$_subFilesDelete");
+               }),
+
+             ],
+           ),
+
+
+           TextButton(
+             child:const  Text("取消"),
+             onPressed: () => Navigator.of(context).pop(),
+           ),
+           TextButton(
+             child:const  Text("删除"),
+             onPressed: () {
+               // 执行删除操作
+               Navigator.of(context).pop(true);
+             },
+           ),
+         ],
+       );
+     },
+   );
+}
+
+class MMAlertCollectView extends StatelessWidget {
+   MMAlertCollectView({super.key});
+  final names = generateWordPairs().take(20).map((e)=> e.asPascalCase).toList();
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          TextButton(onPressed: () async {
+    //第一个
+    bool? delete = await showAlertView(context);
+    if (delete == null) {
+    print("取消删除");
+    } else {
+    print("已确认删除");
+    //... 删除文件
+    }
+    }, child:  Text("弹框1")
+          ),
+
+      TextButton(
+        onPressed: () async {
+          int? changelanguage = await changlanguage(context);
+          print(changelanguage);
+          if(changelanguage==1){
+            print("中文");
+          }else if(changelanguage==2){
+            print("英文");
+          }
+      },
+        child: Text("弹框2"),
+      ),
+
+          TextButton(onPressed: () async {
+      int? selectwordsIndex = await showlistAlert(context, names,null);
+      if (selectwordsIndex != null){
+        print(names[selectwordsIndex]);
+      }
+    },child: Text("弹框3")),
+
+    TextButton(onPressed: () async {
+    bool? delete = await showCusonmAlert(context);
+    if (delete==null) {
+    print("取消删除");
+    }else{
+    print("确定删除");
+    }
+    },
+      child: Text("弹框4"),
+    ),
+    ],
+    ),
+    );
+  }
+}
+
+
+//封装小组件
+class MMCheckBoxView extends StatefulWidget {
+  const MMCheckBoxView({super.key,this.value, required this.onChanged});
+
+  final bool? value;
+  final ValueChanged<bool?> onChanged;
+
+  @override
+  State<MMCheckBoxView> createState() => _MMCheckBoxViewState();
+}
+
+class _MMCheckBoxViewState extends State<MMCheckBoxView> {
+  bool? _value;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _value = widget.value;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(value: _value, onChanged: (v){
+       widget.onChanged(v);
+       setState(() {
+         _value = v;
+       });
+    });
+  }
+}
+
+
+class MMStateBuilder extends StatefulWidget {
+  const MMStateBuilder({super.key,required this.builder});
+  final StatefulWidgetBuilder builder;
+  @override
+  State<MMStateBuilder> createState() => _MMStateBuilderState();
+}
+
+class _MMStateBuilderState extends State<MMStateBuilder> {
+  @override
+  Widget build(BuildContext context) {
+    return widget.builder(context,setState);
   }
 }
