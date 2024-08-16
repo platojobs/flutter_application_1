@@ -9,7 +9,7 @@ class Layoutdemo extends StatelessWidget {
       child: Container(
         width: 300,
         height: 300,
-        padding: const EdgeInsets.all(6),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.red,
           border: Border.all(
