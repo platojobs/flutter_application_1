@@ -24,25 +24,16 @@ class MWrapElements extends StatelessWidget {
           buildContainer(Colors.amber),
           buildContainer(Colors.orange),
           buildContainer(Colors.pink),
-
-
-    
         ],
-
       ),
     );
   }
 
-Container buildContainer(Color containColor){
-  return Container(
-    width: 100,
-    height: 100,
-    color: containColor,
-  );
-}
-
-
-
-
-
+  Container buildContainer(Color containColor) {
+    return Container(
+      width: 100,
+      height: 100,
+      color: containColor,
+    );
+  }
 }

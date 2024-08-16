@@ -11,6 +11,7 @@ import 'package:flutter_pprotapp/widgets/widgets_study/layoutdemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/pointerMove_listener.dart';
+
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -21,29 +22,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.light, //深色还是浅色
         primarySwatch: Colors.blue, //主题色样本
         primaryColor: Colors.red, //决定导航栏的颜色
-        cardColor: Colors.black,//卡片的颜色
-        dividerColor: Colors.green,//分割线的颜色
+        cardColor: Colors.black, //卡片的颜色
+        dividerColor: Colors.green, //分割线的颜色
         buttonTheme: ButtonThemeData(
           textTheme: ButtonTextTheme.accent,
           buttonColor: Colors.blue,
         ),
         fontFamily: "Oswald",
-
       ),
-     // home:   ThemeRoute(),
+      // home:   ThemeRoute(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("ListView"),
         ),
-        body:    const Fileoperationroute(),
+        body: const Fileoperationroute(),
       ),
-
     );
   }
 }
