@@ -8,12 +8,14 @@ import 'package:flutter_pprotapp/widgets/widgets_study/colorsAndTheme_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/fileoperationroute.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/futureBuilder_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/gridView_md.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/json_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/layoutdemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/offstage_stu.dart';
 
 import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/pointerMove_listener.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/socket_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/table_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/transform_stu.dart';
 
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text("ListView"),
         ),
-        body: const OffStageWG(),
+        body: const JsonOperationTest(),
       ),
     );
   }
