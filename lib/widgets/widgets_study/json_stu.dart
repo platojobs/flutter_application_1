@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_pprotapp/l10n/localization_intl.dart';
 
 import '../../models/user.dart';
 
@@ -28,6 +29,7 @@ class _JsonOperationTestState extends State<JsonOperationTest> {
             });
           }),
           Text("${user.name}:${user.age}",style: const TextStyle(fontSize: 15),),
+          Text(TDemoLocalizations.of(context).remainingEmailsMessage(user.age)),
         ],
       ),
     );

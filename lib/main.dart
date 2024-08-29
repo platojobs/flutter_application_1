@@ -18,7 +18,10 @@ import 'package:flutter_pprotapp/widgets/widgets_study/pointerMove_listener.dart
 import 'package:flutter_pprotapp/widgets/widgets_study/socket_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/table_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/transform_stu.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'l10n/localization_intl.dart';
+import 'localizations/demoLocalizations.dart';
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -30,6 +33,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        DemoLocalizationsDelegate(), //自定义国际化代理
+        TDemoLocalizationsDelegate(),
+      ],
+      supportedLocales: const [
+        Locale("en","US"), //语言和国家标志
+        Locale("zh","CN"),
+      ],
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.light, //深色还是浅色
