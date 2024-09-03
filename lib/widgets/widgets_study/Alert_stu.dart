@@ -11,43 +11,48 @@ class MMAletView extends StatelessWidget {
   final names = generateWordPairs().take(20).map((e)=> e.asPascalCase).toList();
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: () async {
-      /* 第一个
-      bool? delete = await showAlertView(context);
-      if (delete == null) {
-        print("取消删除");
-      } else {
-        print("已确认删除");
-        //... 删除文件
-      }
-      */
+    return Scaffold(
+      appBar: AppBar(
+        title:const Text("alert"),
+      ),
+      body: TextButton(onPressed: () async {
+        /* 第一个
+        bool? delete = await showAlertView(context);
+        if (delete == null) {
+          print("取消删除");
+        } else {
+          print("已确认删除");
+          //... 删除文件
+        }
+        */
 
-      /*第二个
-      int? changelanguage = await changlanguage(context);
-      print(changelanguage);
-      if(changelanguage==1){
-        print("中文");
-      }else if(changelanguage==2){
-        print("英文");
-      }
-      */
+        /*第二个
+        int? changelanguage = await changlanguage(context);
+        print(changelanguage);
+        if(changelanguage==1){
+          print("中文");
+        }else if(changelanguage==2){
+          print("英文");
+        }
+        */
 
-      /* 第三个
-      int? selectwordsIndex = await showlistAlert(context, names,null);
-      if (selectwordsIndex != null){
-        print(names[selectwordsIndex]);
-      }
-    },
-    */
-      bool? delete = await showCusonmAlert(context);
-      if (delete==null) {
-        print("取消删除");
-      }else{
-        print("确定删除");
-      }
+        /* 第三个
+        int? selectwordsIndex = await showlistAlert(context, names,null);
+        if (selectwordsIndex != null){
+          print(names[selectwordsIndex]);
+        }
       },
-      child: Text("弹框"),
+      */
+        bool? delete = await showCusonmAlert(context);
+        if (delete==null) {
+          print("取消删除");
+        }else{
+          print("确定删除");
+        }
+        },
+        child: Text("弹框"),
 
+      ),
     );
   }
 }

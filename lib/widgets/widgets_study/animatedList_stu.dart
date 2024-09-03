@@ -100,3 +100,18 @@ class _MMAnimatedListState extends State<MMAnimatedList> {
   }
 
 }
+
+
+class MMAnimatedListStudy extends StatelessWidget {
+  const MMAnimatedListStudy({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("动画"),
+      ),
+      body: const MMAnimatedList(),
+    );
+  }
+}
