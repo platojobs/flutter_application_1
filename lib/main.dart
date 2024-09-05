@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/Alert_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/ChangeNotifierProviderDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/NestedScrollView_stu.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_pprotapp/widgets/widgets_study/fileoperationroute.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/futureBuilder_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/gridView_md.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/homeRoute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/jsonToModel.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/json_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/layoutdemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/offstage_stu.dart';
@@ -17,6 +19,8 @@ import 'package:flutter_pprotapp/widgets/widgets_study/offstage_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/pointerMove_listener.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/refresh_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/route_args.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/socket_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/state_manage.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/table_stu.dart';
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: EasyLoading.init(),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -64,7 +69,10 @@ class MyApp extends StatelessWidget {
         "state_manage":(context)=>const StateMutilManage(),
         "home":(context) =>  HomeRoute(),
         "alert":(context)=> MMAletView(),
-        "MMAnimatedListStudy":(context) => const MMAnimatedListStudy()
+        "MMAnimatedListStudy":(context) => const MMAnimatedListStudy(),
+        "RouteArgs":(context)=>  DataDetailPage(id: ModalRoute.of(context)!.settings.arguments as String),
+        "RefreshS":(context)=> const RefreshS(),
+        "jsonToModel":(context) => JsonToModelStt(),
       },
       initialRoute: "home",
 
