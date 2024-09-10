@@ -4,6 +4,7 @@ import 'package:flutter_pprotapp/widgets/widgets_study/Alert_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/ChangeNotifierProviderDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/NestedScrollView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/InheritedWidget_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/ShapesExample.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/animatedList_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/baseline_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/colorsAndTheme_stu.dart';
@@ -24,6 +25,7 @@ import 'package:flutter_pprotapp/widgets/widgets_study/route_args.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/socket_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/state_manage.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/table_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/ticket.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/transform_stu.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.red, //决定导航栏的颜色
         cardColor: Colors.black, //卡片的颜色
         dividerColor: Colors.green, //分割线的颜色
-        buttonTheme: ButtonThemeData(
+        buttonTheme: const ButtonThemeData(
           textTheme: ButtonTextTheme.accent,
           buttonColor: Colors.blue,
         ),
@@ -67,12 +69,13 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "state_manage":(context)=>const StateMutilManage(),
-        "home":(context) =>  HomeRoute(),
+        "home":(context) =>  const HomeRoute(),
         "alert":(context)=> MMAletView(),
         "MMAnimatedListStudy":(context) => const MMAnimatedListStudy(),
         "RouteArgs":(context)=>  DataDetailPage(id: ModalRoute.of(context)!.settings.arguments as String),
         "RefreshS":(context)=> const RefreshS(),
-        "jsonToModel":(context) => JsonToModelStt(),
+        "jsonToModel":(context) => const JsonToModelStt(),
+        "ShapesExample":(context)=>const ShapesExample(),
       },
       initialRoute: "home",
 

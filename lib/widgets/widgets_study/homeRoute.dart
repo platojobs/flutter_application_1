@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-class HomeRoute extends StatelessWidget {
-  HomeRoute({super.key});
+class HomeRoute extends StatefulWidget {
+  const HomeRoute({super.key});
+
+  @override
+  State<HomeRoute> createState() => _HomeRouteState();
+}
+
+class _HomeRouteState extends State<HomeRoute> {
   final routs = {"state_manage":"状态管理", "home":"首页","alert":"弹窗","MMAnimatedListStudy":"列表删除增添学习",
     "RouteArgs":"路由传参数",
     "RefreshS":"刷新加载更多",
-    "jsonToModel":"Josn模型转化"
+    "jsonToModel":"Josn模型转化",
+    "ShapesExample":"剪辑器",
 
   };
-
+  final dateIndicatorKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
