@@ -11,9 +11,15 @@ class _HomeRouteState extends State<HomeRoute> {
   final routs = {"state_manage":"状态管理", "home":"首页","alert":"弹窗","MMAnimatedListStudy":"列表删除增添学习",
     "RouteArgs":"路由传参数",
     "RefreshS":"刷新加载更多",
-    "jsonToModel":"Josn模型转化",
+    "jsonToModel":"Json模型转化",
     "ShapesExample":"剪辑器",
-
+    "DownLoadButtonDemo":"下载列表",
+    "Fontanimatdemo":"字体放大动画",
+    "EasingAnimationDemo":"缓动动画",
+    "MaskAnimationDemo":"遮罩动画",
+    "ValueAnimationDemo":"数字倒计时动画",
+    "ChartAnimationDemo":"图表动画",
+    "OpacityAnimationDemo":"淡入淡出动画"
   };
   final dateIndicatorKey = GlobalKey();
   @override

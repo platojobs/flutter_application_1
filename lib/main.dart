@@ -7,15 +7,21 @@ import 'package:flutter_pprotapp/widgets/widgets_study/InheritedWidget_stu.dart'
 import 'package:flutter_pprotapp/widgets/widgets_study/ShapesExample.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/animatedList_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/baseline_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/chartAnimationDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/colorsAndTheme_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/downloadDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/easingAnimationDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/fileoperationroute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/fontAnimatDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/futureBuilder_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/gridView_md.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/homeRoute.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/jsonToModel.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/json_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/layoutdemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/maskAnimationDemo.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/offstage_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/opacityAnimationDemo.dart';
 
 import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
@@ -27,7 +33,9 @@ import 'package:flutter_pprotapp/widgets/widgets_study/state_manage.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/table_stu.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/ticket.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/transform_stu.dart';
+
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/valueAnimationDemo.dart';
 
 import 'l10n/localization_intl.dart';
 import 'localizations/demoLocalizations.dart';
@@ -76,6 +84,13 @@ class MyApp extends StatelessWidget {
         "RefreshS":(context)=> const RefreshS(),
         "jsonToModel":(context) => const JsonToModelStt(),
         "ShapesExample":(context)=>const ShapesExample(),
+        "DownLoadButtonDemo":(context)=> const DownloadButtonDemoExample(),
+        "Fontanimatdemo":(context)=> const Fontanimatdemo(),
+        "EasingAnimationDemo":(context)=> const EasingAnimationDemo(),
+        "MaskAnimationDemo": (context)=> const MaskAnimationDemo(),
+        "ValueAnimationDemo": (context)=> const ValueAnimationDemo(),
+        "ChartAnimationDemo":(context) => const ChartAnimationDemo(),
+        "OpacityAnimationDemo":(context)=> const OpacityAnimationDemo(),
       },
       initialRoute: "home",
 
