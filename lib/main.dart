@@ -42,10 +42,10 @@ import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ticket.dart'
 import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/transform_stu.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_pprotapp/generated/l10n.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/valueAnimationDemo.dart';
 
-import 'l10n/localization_intl.dart';
-import 'localizations/demoLocalizations.dart';
+
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 void main() {
   runApp(const MyApp());
@@ -59,17 +59,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: EasyLoading.init(),
       localizationsDelegates: const [
+        S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        DemoLocalizationsDelegate(), //自定义国际化代理
-        TDemoLocalizationsDelegate(),
       ],
-      supportedLocales: const [
-        Locale("en","US"), //语言和国家标志
-        Locale("zh","CN"),
-      ],
-      title: 'Flutter Demo',
+      supportedLocales: S.delegate.supportedLocales,
+      title: S.of(context).title,
       theme: ThemeData(
         brightness: Brightness.light, //深色还是浅色
         primarySwatch: Colors.blue, //主题色样本
@@ -116,6 +112,10 @@ class MyApp extends StatelessWidget {
       // ),
     );
   }
+}
+
+class TDemoLocalizationsDelegate {
+  const TDemoLocalizationsDelegate();
 }
 
 class MyWidget extends StatelessWidget {
