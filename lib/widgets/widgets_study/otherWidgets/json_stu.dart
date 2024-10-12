@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_pprotapp/l10n/localization_intl.dart';
 
-import '../../models/user.dart';
+import '../../../models/user.dart';
 
 class JsonOperationTest extends StatefulWidget {
  const JsonOperationTest({super.key});

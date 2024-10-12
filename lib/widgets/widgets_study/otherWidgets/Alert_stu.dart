@@ -1,7 +1,4 @@
 
-import 'dart:ffi';
-import 'dart:typed_data';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';

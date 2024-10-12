@@ -1,41 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/Alert_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/ChangeNotifierProviderDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/NestedScrollView_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/InheritedWidget_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/ShapesExample.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/animatedList_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/baseline_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/chartAnimationDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/colorsAndTheme_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/downloadDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/easingAnimationDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/fileoperationroute.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/fontAnimatDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/futureBuilder_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/gridView_md.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/homeRoute.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/jsonToModel.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/json_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/layoutdemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/maskAnimationDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/offstage_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/opacityAnimationDemo.dart';
+import 'package:flutter_pprotapp/pages/homeRoute.dart';
+import 'package:flutter_pprotapp/pages/widgetsRoute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/Alert_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/BottomSheet/BottomSheet.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ChangeNotifierProviderDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/NestedScrollView_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/InheritedWidget_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ShapesExample.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/animatedList_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/appBar_pjDemo/BottomAppBarDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/badge/badgeDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/baseline_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/button_pjDemo/buttonDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/chartAnimationDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/colorsAndTheme_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/downloadDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/easingAnimationDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/fileoperationroute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/fontAnimatDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/futureBuilder_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/gridView_md.dart';
+import 'package:flutter_pprotapp/pages/homeRoute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/jsonToModel.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/json_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/layoutdemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/maskAnimationDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/offstage_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/opacityAnimationDemo.dart';
 
-import 'package:flutter_pprotapp/widgets/widgets_study/pageView_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/SliverFlexibleHeaderDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/pointerMove_listener.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/refresh_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/route_args.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/socket_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/state_manage.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/table_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/ticket.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/transform_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/pageView_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/SliverFlexibleHeaderDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/pointerMove_listener.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/progressIndicator/circleIndicator.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/refresh_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/route_args.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/socket_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/state_manage.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/table_stu.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ticket.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/transform_stu.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/valueAnimationDemo.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/valueAnimationDemo.dart';
 
 import 'l10n/localization_intl.dart';
 import 'localizations/demoLocalizations.dart';
@@ -91,6 +98,12 @@ class MyApp extends StatelessWidget {
         "ValueAnimationDemo": (context)=> const ValueAnimationDemo(),
         "ChartAnimationDemo":(context) => const ChartAnimationDemo(),
         "OpacityAnimationDemo":(context)=> const OpacityAnimationDemo(),
+        "WidgetsRoute":(context) => const WidgetsRoute(),
+        "Buttondemo":(context) => const Buttondemo(),
+        "BottomAppBarDemo":(context)=>const BottomAppBarDemo(),
+        "BadgeDemo":(context)=>const BadgeDemo(),
+        "CircleIndicatorDemo": (context) => CircleIndicatorDemo(),
+        "BottomSheetDemo":(context)=>BottomSheetDemo(),
       },
       initialRoute: "home",
 

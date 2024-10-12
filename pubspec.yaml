@@ -44,7 +44,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   json_annotation: ^4.9.0
   flutter_easyloading: any
-
+  liquid_pull_to_refresh: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,7 +76,10 @@ flutter:
   assets:
      -  assets/test.jpeg
      -  assets/avatar.jpg
-     
+     -  assets/anlimg.png
+     -  assets/mtool.png
+     -  assets/lyvip.png
+     -  assets/headerImage.png
   #   - images/a_dot_ham.jpeg
   
     # /Users/gitartos/Desktop/FlutterApp/flutter_pprotapp/lib/fonts

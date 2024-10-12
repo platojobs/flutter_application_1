@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/firstRoute.dart';
+import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/firstRoute.dart';
 class MyDefaultTabController extends StatelessWidget {
   const MyDefaultTabController({super.key});
 

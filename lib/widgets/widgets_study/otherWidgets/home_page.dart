@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
             ScrollControllerWidget(),
           ],
         ),
-        bottomNavigationBar: TabBar(
+        bottomNavigationBar:const TabBar(
           tabs: [
             Tab(icon: Icon(Icons.home),text: "视差",),
             Tab(icon: Icon(Icons.perm_identity),text: "Controller",)
@@ -37,8 +37,8 @@ class ScrollControllerWidget extends StatefulWidget {
 }
 
 class _ScrollControllerState extends State<ScrollControllerWidget> {
-  ScrollController _controller = ScrollController();
-  bool isTop = false;
+  final ScrollController _controller = ScrollController();
+  var  isTop = false;
   @override
   void initState() {
     _controller.addListener(() {
@@ -59,7 +59,7 @@ class _ScrollControllerState extends State<ScrollControllerWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("ScrollController")),
+      appBar: AppBar(title: const Text("ScrollController")),
       body: Column(
         children: [
           Container(
@@ -70,12 +70,12 @@ class _ScrollControllerState extends State<ScrollControllerWidget> {
                   ? () {
                       if (isTop) {
                         _controller.animateTo(.0,
-                            duration: Duration(milliseconds: 200),
+                            duration:const  Duration(milliseconds: 200),
                             curve: Curves.ease); // 做一个滚动到顶部的动画
                       }
                     }
                   : null),
-              child: Text("Top"),
+              child:const Text("回到顶部"),
             ),
           ),
           Expanded(
@@ -100,7 +100,7 @@ class ParallelWidget extends StatelessWidget {
       CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(//SliverAppBar 作为头图控件
-              title: Text('CustomScrollView Demo'),// 标题
+              title: const Text('CustomScrollView Demo'),// 标题
               floating: true,// 设置悬浮样式
               flexibleSpace: Image.network("https://copyright.bdstatic.com/vcg/creative/cc9c744cf9f7c864889c563cbdeddce6.jpg@h_1280",fit:BoxFit.cover),// 设置悬浮头图背景
               expandedHeight: 280,// 头图控件高度
