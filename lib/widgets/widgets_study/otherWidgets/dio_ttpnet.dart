@@ -10,7 +10,7 @@ class DioTestTTp extends StatelessWidget {
       child: OutlinedButton(
           onPressed: (){
             getHttpTest().then((Response response){
-              print(response.data.toString());
+              debugPrint(response.data.toString());
             });
           },
           child: Text("Dio_Bt")),

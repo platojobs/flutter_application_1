@@ -30,12 +30,15 @@ class _MessagePageState extends State<MessagePage> {
             return Column(
               children: [
                 ListTile(
-                  leading: CircleAvatar(
-                    maxRadius: 25,
-                    backgroundColor: Colors.green,
-                    child: Image.asset(
-                      "assets/headerImage.png",
-                      fit: BoxFit.fill,
+                  leading: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      // border: Border.all(width: 1,style: BorderStyle.solid),
+                    ),
+                    child: const Icon(
+                      Icons.insert_comment,
+                      color: Colors.white,
                     ),
                   ),
                   title: Text(

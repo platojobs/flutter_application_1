@@ -56,7 +56,7 @@ class _MMShareDataProviderRouteState extends State<MMShareDataProviderRoute> wit
             children: [
              Consumer<ShopCartModel>(builder: (context,cart)=> Text("total:${cart?.totalPrice}")),
               Builder(builder: (context){
-                print("object");
+                debugPrint("object");
 
                 return ElevatedButton(onPressed: (){
 

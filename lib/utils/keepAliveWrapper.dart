@@ -18,6 +18,7 @@ class KeepAliveWrapper extends StatefulWidget {
 class _KeepAliveWrapperState extends State<KeepAliveWrapper> with AutomaticKeepAliveClientMixin {
   @override
     build(BuildContext context) {
+    super.build(context);
     return widget.child??const Text("❎");
   }
 

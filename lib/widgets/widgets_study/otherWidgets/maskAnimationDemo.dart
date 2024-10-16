@@ -20,7 +20,7 @@ class _MaskAnimationDemoState extends State<MaskAnimationDemo>with TickerProvide
     _controller = AnimationController(vsync: this,duration:const Duration(seconds: 2))
         ..addStatusListener((status){
           if (status == AnimationStatus.completed){
-            print("遮罩动画结束了");
+            debugPrint("遮罩动画结束了");
           }
         });
     _transitionTween = Tween(begin: 50.0,end: 200.0).animate(

@@ -51,7 +51,7 @@ class PJListBuilderWithSeparatedView extends StatelessWidget {
 
   Widget _itemBuilder(BuildContext context,int index) => InkWell(
     onTap:(){
-      print("$index");
+      debugPrint("$index");
     },
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -192,10 +192,10 @@ class _InfiniteListViewState extends State<InfiniteListView> {
   }
 }
 
-
+@immutable
 class ListViewWithHeaderView extends StatelessWidget {
    ListViewWithHeaderView({super.key});
-  var names = generateWordPairs().take(20).map((e)=> e.asPascalCase).toList();
+  final names = generateWordPairs().take(20).map((e)=> e.asPascalCase).toList();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -258,7 +258,7 @@ class _MMListViewWithControllerState extends State<MMListViewWithController> {
     super.initState();
     
     _contoller.addListener((){
-      print(_contoller.offset);
+      debugPrint("${_contoller.offset}");
       if(_contoller.offset < 100 &&showTotopButton){
            setState(() {
              showTotopButton = false;
@@ -321,9 +321,9 @@ class _ScrollNotificationTestRouteState extends State<ScrollNotificationTestRout
             double notice_progress = notice.metrics.pixels / notice.metrics.maxScrollExtent;
             setState(() {
               _progress = "${(notice_progress*100).toInt()}%";
-              print(_progress);
+              debugPrint(_progress);
             });
-            print("BottomEdge:${notice.metrics.extentAfter == 0}");
+            debugPrint("BottomEdge:${notice.metrics.extentAfter == 0}");
             return false;
 
           },

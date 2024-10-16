@@ -23,10 +23,10 @@ class LongListViewWidget extends StatelessWidget {
                   fontSize: 15,
                   color: index % 2 == 0 ? Colors.red : Colors.black)),
           // onTap: () {
-          //   print('点击了第$index行');
+          //   debugPrint('点击了第$index行');
           // },
           onLongPress: (){
-            print('长按了第$index行');
+            debugPrint('长按了第$index行');
           },
         );
       },

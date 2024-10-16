@@ -33,7 +33,7 @@ class MyStackWidget extends StatelessWidget {
             right: 10,
             child: LayoutBuilder(
                 builder: (BuildContext context, BoxConstraints constraints) {
-              print("constraints: $constraints");
+                  debugPrint("constraints: $constraints");
               return Container(width: 50, height: 50, color: Colors.yellow);
             }),
           ),

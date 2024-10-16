@@ -50,7 +50,7 @@ class PTestWidgetState extends State<PTestWidget> {
                       setState(() {
                         _favorite = !_favorite;
                       });
-                      print("点击了收藏");
+                      debugPrint("点击了收藏");
                     },
                   ),
                 ],

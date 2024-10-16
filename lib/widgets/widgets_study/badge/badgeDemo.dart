@@ -2,9 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../progressIndicator/DownLoadWT.dart';
-import '../progressIndicator/ProgressIndicator.dart';
-import 'dart:math';
 class BadgeDemo extends StatefulWidget {
   const BadgeDemo({super.key});
 
@@ -38,10 +35,10 @@ class _BadgeDemoState extends State<BadgeDemo> {
               ),
             ),
             IconButton(onPressed: (){
-              print("object");
+              debugPrint("object");
               setState(() {
                 value = Random().nextInt(101)*0.01;
-                print(value);
+                debugPrint("$value");
               });
 
             },
@@ -62,7 +59,7 @@ class _BadgeDemoState extends State<BadgeDemo> {
                    label: "确认吗？",
                    textColor: Colors.red,
                    onPressed: (){
-                     print("hello");
+                     debugPrint("hello");
                    },
                  ),
                ),

@@ -17,6 +17,7 @@ class HomeRoute extends StatefulWidget {
 class _HomeRouteState extends State<HomeRoute> {
   final routs = {
     "WidgetsRoute": "组件篇",
+    "LocalliztionDemo":"国际化",
     "state_manage": "状态管理",
     "home": "首页",
     "alert": "弹窗",
@@ -34,8 +35,10 @@ class _HomeRouteState extends State<HomeRoute> {
     "OpacityAnimationDemo": "淡入淡出动画",
   };
   final iconsLD = [
-    Icons.import_contacts,Icons.pedal_bike,Icons.book,Icons.bookmark_add,Icons.message,
-    Icons.media_bluetooth_off_outlined,Icons.ac_unit,Icons.near_me_sharp,Icons.mediation
+    Icons.import_contacts,Icons.ac_unit,Icons.add_alarm,Icons.bookmark_add,Icons.message,
+    Icons.media_bluetooth_off_outlined,Icons.album,Icons.near_me_sharp,Icons.mediation,
+    Icons.assessment,Icons.assistant_photo,Icons.cloud_done,
+    Icons.contact_mail,Icons.contacts,Icons.view_agenda,Icons.web,Icons.work
   ];
 
 
@@ -153,7 +156,7 @@ class _HomeRouteState extends State<HomeRoute> {
                   leading: CircleAvatar(
                     maxRadius: 25,
                     backgroundColor: Colors.green,
-                    child:  Icon(iconsLD[Random().nextInt(8)],size: 45,color: Colors.white,),
+                    child:  Icon(iconsLD[Random().nextInt(iconsLD.length)],size: 45,color: Colors.white,),
                   ),
                   title: Text(routs.values.toList()[index],style: const TextStyle(color: Colors.green),),
                   subtitle:  Text(generateWordPairs().take(20).join("-"),
@@ -166,8 +169,9 @@ class _HomeRouteState extends State<HomeRoute> {
                             arguments: arskey == "RouteArgs" ? "2w3" : "");
                       },
                       icon:const  Icon(
-                        Icons.arrow_circle_right,
+                        Icons.arrow_forward_ios,
                         color: Colors.green,
+                        size: 20,
                       )),
                 ),
                 const Divider(height: 1,),

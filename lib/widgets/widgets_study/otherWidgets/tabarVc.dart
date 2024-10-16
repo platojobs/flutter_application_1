@@ -25,7 +25,7 @@ class MyDefaultTabController extends StatelessWidget {
             Center(
               child: TextButton(
                   onPressed: () {
-                    print("object");
+                    debugPrint("object");
                     Navigator.push(
                         context,
                         MaterialPageRoute(

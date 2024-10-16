@@ -43,8 +43,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   json_annotation: ^4.9.0
-  flutter_easyloading: any
-  liquid_pull_to_refresh: any
+  flutter_easyloading: any # hud
+  liquid_pull_to_refresh: any # 下拉水波纹刷新
+  flutter_carousel_slider: any #轮播组件
+  weather_icons: any #天气图标
 dev_dependencies:
   flutter_test:
     sdk: flutter

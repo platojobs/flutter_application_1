@@ -75,7 +75,7 @@ class _TestShareDataState extends State<TestShareData> {
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
-    print("Dependencies change");
+    debugPrint("Dependencies change");
   }
   
 }

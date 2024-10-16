@@ -28,7 +28,7 @@ class _EasingAnimationDemoState extends State<EasingAnimationDemo> with TickerPr
                    ..addStatusListener((status){
                      if (status == AnimationStatus.completed){
                        //Navigator.pop(context);
-                       print("动画结束了");
+                       debugPrint("动画结束了");
                      }
                    });
       _controller?.forward();

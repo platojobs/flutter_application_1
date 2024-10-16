@@ -89,6 +89,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Season`
+  String get season {
+    return Intl.message(
+      'Season',
+      name: 'season',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spring`
+  String get spring {
+    return Intl.message(
+      'Spring',
+      name: 'spring',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summer`
+  String get summer {
+    return Intl.message(
+      'Summer',
+      name: 'summer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Autumn`
+  String get autumn {
+    return Intl.message(
+      'Autumn',
+      name: 'autumn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Winter`
+  String get winter {
+    return Intl.message(
+      'Winter',
+      name: 'winter',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

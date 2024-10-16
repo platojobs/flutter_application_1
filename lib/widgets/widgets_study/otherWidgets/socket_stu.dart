@@ -31,7 +31,7 @@ class _SocketRouteState extends State<SocketRoute> {
     socket.writeln();
     await socket.flush();
     String _reposne = await utf8.decoder.bind(socket).join();
-    print(_reposne);
+    debugPrint(_reposne);
     await socket.close();
     return _reposne;
   }

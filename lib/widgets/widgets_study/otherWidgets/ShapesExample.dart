@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ticket.dart';
-
 class ShapesExample extends StatefulWidget {
   const ShapesExample({super.key});
 

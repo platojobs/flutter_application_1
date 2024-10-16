@@ -25,7 +25,7 @@ class _PointerMoveState extends State<PointerMove> {
               "${_event?.localPosition ?? "--"} + ${_event?.delta ??"-7-"}",
               style: const TextStyle(color: Colors.black45),
             ),
-            onPointerDown: (PointerDownEvent event) => print("hello"), // 不接受事件
+            onPointerDown: (PointerDownEvent event) => debugPrint("hello"), // 不接受事件
           )
         )
       ),

@@ -58,8 +58,8 @@ class _FormTestRouteState extends State<FormTestRoute> {
                       ),
                       onPressed: () {
                         if ((_formkay.currentState as FormState).validate()) {
-                          print("用户名：${_usenameController.text}");
-                          print("密码：${_pwdController.text}");
+                          debugPrint("用户名：${_usenameController.text}");
+                          debugPrint("密码：${_pwdController.text}");
                         }
                       }),
                 ),

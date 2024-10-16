@@ -2,5 +2,13 @@
   "title": "flutter 国际化",
   "content": "您点击了多次",
   "username": "用户名",
-  "password": "密码"
+  "password": "密码",
+
+  "season": "季节",
+  "spring": "春天",
+  "summer": "夏天",
+  "autumn": "秋天",
+  "winter": "冬天"
+
+
 }

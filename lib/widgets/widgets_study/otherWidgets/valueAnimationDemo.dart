@@ -24,7 +24,7 @@ class _ValueAnimationDemoState extends State<ValueAnimationDemo>with TickerProvi
                      //_controller?.reverse();
                    }
                    if(status == AnimationStatus.dismissed){
-                     print("数字动画结束了");
+                     debugPrint("数字动画结束了");
                    }
                  });
 

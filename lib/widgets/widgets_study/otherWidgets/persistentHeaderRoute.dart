@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pprotapp/utils/sliverHeaderDelegate.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/SliverPersistentHeaderToBox.dart';
 
 class PersistentHeaderRoute extends StatelessWidget {
   const PersistentHeaderRoute({super.key});

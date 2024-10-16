@@ -29,7 +29,7 @@ class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
     Widget child = builder(context,shrinkOffset,overlapsContent);
     assert( (){
       if(child.key !=null){
-        print("${child.key}: shrink: $shrinkOffset,overlaps:$overlapsContent");}
+        debugPrint("${child.key}: shrink: $shrinkOffset,overlaps:$overlapsContent");}
       return true;
       }());
     return SizedBox.expand(child: child,);

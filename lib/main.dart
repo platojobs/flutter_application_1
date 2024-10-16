@@ -1,49 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_pprotapp/pages/homeRoute.dart';
-import 'package:flutter_pprotapp/pages/widgetsRoute.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/Alert_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/BottomSheet/BottomSheet.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ChangeNotifierProviderDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/NestedScrollView_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/InheritedWidget_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ShapesExample.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/animatedList_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/appBar_pjDemo/BottomAppBarDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/badge/badgeDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/baseline_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/button_pjDemo/buttonDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/chartAnimationDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/colorsAndTheme_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/downloadDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/easingAnimationDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/fileoperationroute.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/fontAnimatDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/futureBuilder_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/gridView_md.dart';
-import 'package:flutter_pprotapp/pages/homeRoute.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/jsonToModel.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/json_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/layoutdemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/maskAnimationDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/offstage_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/opacityAnimationDemo.dart';
-
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/pageView_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/SliverFlexibleHeaderDemo.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/pointerMove_listener.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/progressIndicator/circleIndicator.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/refresh_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/route_args.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/socket_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/state_manage.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/table_stu.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/ticket.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/transform_stu.dart';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_pprotapp/appMac/app_config.dart';
 import 'package:flutter_pprotapp/generated/l10n.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/valueAnimationDemo.dart';
 
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
@@ -65,7 +24,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      title: S.of(context).title,
+      title: "FlutterDemo",
       theme: ThemeData(
         brightness: Brightness.light, //深色还是浅色
         primarySwatch: Colors.blue, //主题色样本
@@ -78,29 +37,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: "Oswald",
       ),
-      routes: {
-        "state_manage":(context)=>const StateMutilManage(),
-        "home":(context) =>  const HomeRoute(),
-        "alert":(context)=> MMAletView(),
-        "MMAnimatedListStudy":(context) => const MMAnimatedListStudy(),
-        "RouteArgs":(context)=>  DataDetailPage(id: ModalRoute.of(context)!.settings.arguments as String),
-        "RefreshS":(context)=> const RefreshS(),
-        "jsonToModel":(context) => const JsonToModelStt(),
-        "ShapesExample":(context)=>const ShapesExample(),
-        "DownLoadButtonDemo":(context)=> const DownloadButtonDemoExample(),
-        "Fontanimatdemo":(context)=> const Fontanimatdemo(),
-        "EasingAnimationDemo":(context)=> const EasingAnimationDemo(),
-        "MaskAnimationDemo": (context)=> const MaskAnimationDemo(),
-        "ValueAnimationDemo": (context)=> const ValueAnimationDemo(),
-        "ChartAnimationDemo":(context) => const ChartAnimationDemo(),
-        "OpacityAnimationDemo":(context)=> const OpacityAnimationDemo(),
-        "WidgetsRoute":(context) => const WidgetsRoute(),
-        "Buttondemo":(context) => const Buttondemo(),
-        "BottomAppBarDemo":(context)=>const BottomAppBarDemo(),
-        "BadgeDemo":(context)=>const BadgeDemo(),
-        "CircleIndicatorDemo": (context) => CircleIndicatorDemo(),
-        "BottomSheetDemo":(context)=>BottomSheetDemo(),
-      },
+      routes: AppConfig.routsMap(context),
       initialRoute: "home",
 
       // home:  const HomeRoute(),

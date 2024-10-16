@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pprotapp/utils/ColorUtil.dart';
-import 'package:flutter_pprotapp/utils/utils.dart';
+
 import 'package:flutter_pprotapp/widgets/widgets_study/button_pjDemo/PJButtonBackGroundColor.dart';
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/gridView_md.dart';
+
 
 class Mepage extends StatefulWidget {
   const Mepage({super.key});
@@ -13,7 +13,7 @@ class Mepage extends StatefulWidget {
 
 class _MepageState extends State<Mepage> {
 
-  final _iconsName = ["assets/anlimg.png","assets/anlimg.png","assets/anlimg.png"];
+  //final _iconsName = ["assets/anlimg.png","assets/anlimg.png","assets/anlimg.png"];
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _MepageState extends State<Mepage> {
       body: ListView.builder(
         shrinkWrap: true,
         padding: const EdgeInsets.all(25),
-        itemBuilder: (context, index) {
+        itemBuilder: (context, index){
           if (index == 0) {
             return SizedBox(
               height: 100,
@@ -308,6 +308,7 @@ class _MepageState extends State<Mepage> {
               ),
             );
           }
+          return Text("xxx");
         },
         itemCount: 7,
       ),

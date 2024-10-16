@@ -22,9 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "autumn": MessageLookupByLibrary.simpleMessage("秋天"),
         "content": MessageLookupByLibrary.simpleMessage("您点击了多次"),
         "password": MessageLookupByLibrary.simpleMessage("密码"),
+        "season": MessageLookupByLibrary.simpleMessage("季节"),
+        "spring": MessageLookupByLibrary.simpleMessage("春天"),
+        "summer": MessageLookupByLibrary.simpleMessage("夏天"),
         "title": MessageLookupByLibrary.simpleMessage("flutter 国际化"),
-        "username": MessageLookupByLibrary.simpleMessage("用户名")
+        "username": MessageLookupByLibrary.simpleMessage("用户名"),
+        "winter": MessageLookupByLibrary.simpleMessage("冬天")
       };
 }

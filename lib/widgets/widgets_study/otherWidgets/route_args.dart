@@ -22,7 +22,7 @@ class _DataDetailPageState extends State<DataDetailPage> {
   @override
   void initState() {
     super.initState();
-    print("==${widget.id}");
+    debugPrint("==${widget.id}");
     fetchData();
   }
 
@@ -34,11 +34,11 @@ class _DataDetailPageState extends State<DataDetailPage> {
       Response response = await PJDioNetWorking().get('http://v.juhe.cn/todayOnhistory/queryEvent.php');
       PJProgressHUD.hidHud();
       PJProgressHUD.showSuccessHudDelay(msg: "成功", delay: 1);
-      print('获取数据: ${response.data}');
+      debugPrint('获取数据: ${response.data}');
       var mapjson = jsonDecode(response.data);
-      print('获取数据==: $mapjson');
+      debugPrint('获取数据==: $mapjson');
       var reslut = ResultData.fromJson(mapjson);
-      print('获取数据: ${reslut.reason}');
+      debugPrint('获取数据: ${reslut.reason}');
       setState(() {
         data = reslut.reason; // 更新状态的数据
       });
@@ -46,7 +46,7 @@ class _DataDetailPageState extends State<DataDetailPage> {
       PJProgressHUD.hidHud();
 
       PJProgressHUD.showErrorHudDelay(e.toString(), 1);
-      print('获取数据失败: ${e.error}'); // 打印错误信息
+      debugPrint('获取数据失败: ${e.error}'); // 打印错误信息
     }
   }
 

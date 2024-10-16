@@ -64,7 +64,7 @@ class _MMAnimatedListState extends State<MMAnimatedList> {
             data.add("${
                 ++counter}");
                 globalKey.currentState!.insertItem(data.length-1);
-                print("add+ $counter");
+                debugPrint("add+ $counter");
           },
         ),
 
@@ -78,7 +78,7 @@ class _MMAnimatedListState extends State<MMAnimatedList> {
       
       globalKey.currentState!.removeItem(index, (context,animation){
         var item = builditem(context,index);
-        print("delete ${data[index]}");
+        debugPrint("delete ${data[index]}");
         data.removeAt(index);
         return FadeTransition(
             opacity: CurvedAnimation(

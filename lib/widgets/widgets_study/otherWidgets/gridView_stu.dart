@@ -4,8 +4,6 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/mgridView.dart';
-
 class MMGridView extends StatelessWidget {
     MMGridView({super.key});
   final names = generateWordPairs().take(50).map((e)=> e.asUpperCase).toList();

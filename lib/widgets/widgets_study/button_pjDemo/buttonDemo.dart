@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pprotapp/utils/ColorUtil.dart';
 import 'package:flutter_pprotapp/widgets/widgets_study/button_pjDemo/singleChoiceSegment.dart';
 
 import 'PJButtonBackGroundColor.dart';
@@ -26,14 +25,14 @@ class _ButtondemoState extends State<Buttondemo> {
               titles: const {"近一月", "近一周", "近三天"},
               defaultSelect: '近一月',
               onSelectionChanged: (value) {
-                print("选择了:${value}");
+                debugPrint("选择了:${value}");
               },
             ),
             MultipleChoiceSegMent(
                 titles: const {"近一月", "近一周", "近三天"},
                 defaultSelect: {'近一月',"近一周"},
                 onSelectionChanged: (value) {
-                  print("多选-选择了:${value}");
+                  debugPrint("多选-选择了:${value}");
                 }),
 
             Padding(
@@ -85,7 +84,7 @@ class _ButtondemoState extends State<Buttondemo> {
             //     children: [
             //       PJFilledButton(
             //         onPressed: () {
-            //           print("置顶");
+            //           debugPrint("置顶");
             //         },
             //         title: "置顶",
             //         bgColors: ColorUtil.hexColorString("#F3AC31"),
@@ -93,7 +92,7 @@ class _ButtondemoState extends State<Buttondemo> {
             //       ),
             //       PJFilledButton(
             //           onPressed: () {
-            //             print("优先推广了");
+            //             debugPrint("优先推广了");
             //           },
             //           title: "优先推广",
             //           bgColors: ColorUtil.hexColorString("#469DBF"),

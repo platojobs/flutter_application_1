@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class MyFromWidget extends StatefulWidget {
   const MyFromWidget({super.key});
@@ -88,8 +87,8 @@ class _MyFromWidgetState extends State<MyFromWidget>
                       //验证通过提交数据
                       
                       
-                      print(user.text);
-                      print(password.text);
+                      debugPrint(user.text);
+                      debugPrint(password.text);
                     }
                   },
                   child: const Text(

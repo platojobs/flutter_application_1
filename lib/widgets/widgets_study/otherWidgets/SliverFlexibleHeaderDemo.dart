@@ -31,7 +31,7 @@ class MMSliverFlexibleHeader extends StatelessWidget {
                     fit: BoxFit.cover
                 ),
                 onTap: () {
-                  print("object");
+                  debugPrint("object");
                 },
               ),
         ),

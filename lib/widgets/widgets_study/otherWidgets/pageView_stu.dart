@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'dart:math';
+
 import 'package:flutter_pprotapp/utils/keepAliveWrapper.dart';
 class SubPageView extends StatefulWidget {
   SubPageView({super.key,required this.name});
@@ -15,7 +15,7 @@ class _SubPageViewState extends State<SubPageView> with AutomaticKeepAliveClient
   @override
   void initState() {
     // TODO: implement initState
-    print(widget.name);
+    debugPrint(widget.name);
     super.initState();
   }
 

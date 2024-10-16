@@ -21,7 +21,7 @@ class TCustomScrollView extends StatelessWidget {
           },
           itemCount: 28,
           findChildIndexCallback: (key) {
-            print(key.toString());
+            debugPrint(key.toString());
             return key.hashCode;
           },
         ),

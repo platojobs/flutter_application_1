@@ -22,10 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "autumn": MessageLookupByLibrary.simpleMessage("Autumn"),
         "content": MessageLookupByLibrary.simpleMessage(
             "You have click the button many times"),
         "password": MessageLookupByLibrary.simpleMessage("PassWord"),
+        "season": MessageLookupByLibrary.simpleMessage("Season"),
+        "spring": MessageLookupByLibrary.simpleMessage("Spring"),
+        "summer": MessageLookupByLibrary.simpleMessage("Summer"),
         "title": MessageLookupByLibrary.simpleMessage("Flutter intl"),
-        "username": MessageLookupByLibrary.simpleMessage("UserName")
+        "username": MessageLookupByLibrary.simpleMessage("UserName"),
+        "winter": MessageLookupByLibrary.simpleMessage("Winter")
       };
 }

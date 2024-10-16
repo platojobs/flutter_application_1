@@ -14,7 +14,7 @@ class _MultipleChoiceSegMentState extends State<MultipleChoiceSegMent> {
   @override
   Widget build(BuildContext context) {
     return SegmentedButton(
-      segments: widget.titles!.toList().map(
+      segments: widget.titles.toList().map(
               (index)=>ButtonSegment(value: index,label: Text(index)
           )
       ).toList(),

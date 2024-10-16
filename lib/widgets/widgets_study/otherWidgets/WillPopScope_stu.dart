@@ -10,7 +10,7 @@ class WillPopScopeDemo extends StatefulWidget {
 }
 
 class _WillPopScopeDemoState extends State<WillPopScopeDemo> {
-  DateTime? _lastTime;
+
   @override
   Widget build(BuildContext context) {
     return PopScope(

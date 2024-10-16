@@ -68,7 +68,7 @@ class _MBottomNavigationWidgetState extends State<MBottomNavigationWidget> {
           onTap: (int index) {
             setState(() {
               _currentIndex = index;
-              print(_pages[index]);
+              debugPrint("${_pages[index]}");
             });
           }),
     );

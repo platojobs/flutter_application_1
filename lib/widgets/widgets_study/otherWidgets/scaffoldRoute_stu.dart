@@ -9,7 +9,6 @@ class ScaffoldRoute_stu extends StatefulWidget {
 }
 
 class _ScaffoldRoute_stuState extends State<ScaffoldRoute_stu> {
-  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class _ScaffoldRoute_stuState extends State<ScaffoldRoute_stu> {
           }),
           actions: <Widget>[
             IconButton(onPressed: () {
-               print("share");
+              debugPrint("share");
             }, icon: const Icon(Icons.share)),
           ],
         ),
@@ -139,11 +138,11 @@ class DongTabbar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(icon:const Icon(Icons.home),onPressed:(){
-            print("home");
+            debugPrint("home");
           },),
           const SizedBox(),
           IconButton(icon: const Icon(Icons.business),onPressed:(){
-            print("business");
+            debugPrint("business");
           },),
         ],
         //均分底部导航栏横向空间

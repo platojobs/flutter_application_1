@@ -142,6 +142,6 @@ class SliverPersistentHeaderToBoxRoute extends StatelessWidget {
 
   // 我们约定小写字母 w 开头的函数代表是需要构建一个 Widget，这比 buildXX 会更简洁
   Widget wTitle(String text) =>
-      ListTile(title: Text(text), onTap: () => print(text));
+      ListTile(title: Text(text), onTap: () => debugPrint(text));
 }
 

@@ -16,35 +16,35 @@ class MMAletView extends StatelessWidget {
         /* 第一个
         bool? delete = await showAlertView(context);
         if (delete == null) {
-          print("取消删除");
+          debugPrint("取消删除");
         } else {
-          print("已确认删除");
+          debugPrint("已确认删除");
           //... 删除文件
         }
         */
 
         /*第二个
         int? changelanguage = await changlanguage(context);
-        print(changelanguage);
+        debugPrint(changelanguage);
         if(changelanguage==1){
-          print("中文");
+          debugPrint("中文");
         }else if(changelanguage==2){
-          print("英文");
+          debugPrint("英文");
         }
         */
 
         /* 第三个
         int? selectwordsIndex = await showlistAlert(context, names,null);
         if (selectwordsIndex != null){
-          print(names[selectwordsIndex]);
+          debugPrint(names[selectwordsIndex]);
         }
       },
       */
         bool? delete = await showCusonmAlert(context);
         if (delete==null) {
-          print("取消删除");
+          debugPrint("取消删除");
         }else{
-          print("确定删除");
+          debugPrint("确定删除");
         }
         },
         child: Text("弹框"),
@@ -138,7 +138,7 @@ Future<int?>showlistAlert(BuildContext context,List<String> names , int? default
                   trailing: (defaultindex != null&& index == defaultindex)?Icon(Icons.check_box,color: Colors.blue,):null,
                   onTap: (){
                   defaultindex = index;
-                  print(defaultindex);
+                  debugPrint("$defaultindex");
                   Navigator.of(context).pop(index);
                   },
                 );
@@ -153,7 +153,7 @@ Future<int?>showlistAlert(BuildContext context,List<String> names , int? default
 
 //自定义的
 Future<T?>showCustomDialog<T>({required BuildContext context, bool dismissbale = true,required WidgetBuilder builder,ThemeData? theme}){
-   final ThemeData date = Theme.of(context);
+  // final ThemeData date = Theme.of(context);
 
    return showGeneralDialog(context: context, pageBuilder: (BuildContext buildContext, Animation<double> animation,
        Animation<double> secondaryAnimation){
@@ -197,10 +197,10 @@ class _MMDefaultListSectViewState extends State<MMDefaultListSectView> {
       // 第三个
       selectwordsIndex = await showlistAlert(context, names,selectwordsIndex);
       if (selectwordsIndex != null){
-        print(names[selectwordsIndex!]);
+        debugPrint(names[selectwordsIndex!]);
       }
       setState(() {
-        print("$selectwordsIndex"+"state");
+        debugPrint("$selectwordsIndex"+"state");
       });
     },
       child: Text(selectwordsIndex==null?"弹框":names[selectwordsIndex!],),
@@ -227,7 +227,7 @@ Future<bool?>showCusonmAlert(BuildContext context){
                    onChanged: (e){
 
                  _subFilesDelete = e!;
-                 print("===$_subFilesDelete");
+                 debugPrint("===$_subFilesDelete");
                }),
 
              ],
@@ -263,9 +263,9 @@ class MMAlertCollectView extends StatelessWidget {
     //第一个
     bool? delete = await showAlertView(context);
     if (delete == null) {
-    print("取消删除");
+    debugPrint("取消删除");
     } else {
-    print("已确认删除");
+    debugPrint("已确认删除");
     //... 删除文件
     }
     }, child:  Text("弹框1")
@@ -274,11 +274,11 @@ class MMAlertCollectView extends StatelessWidget {
       TextButton(
         onPressed: () async {
           int? changelanguage = await changlanguage(context);
-          print(changelanguage);
+          debugPrint("$changelanguage");
           if(changelanguage==1){
-            print("中文");
+            debugPrint("中文");
           }else if(changelanguage==2){
-            print("英文");
+            debugPrint("英文");
           }
       },
         child: Text("弹框2"),
@@ -287,16 +287,16 @@ class MMAlertCollectView extends StatelessWidget {
           TextButton(onPressed: () async {
       int? selectwordsIndex = await showlistAlert(context, names,null);
       if (selectwordsIndex != null){
-        print(names[selectwordsIndex]);
+        debugPrint(names[selectwordsIndex]);
       }
     },child: Text("弹框3")),
 
     TextButton(onPressed: () async {
     bool? delete = await showCusonmAlert(context);
     if (delete==null) {
-    print("取消删除");
+    debugPrint("取消删除");
     }else{
-    print("确定删除");
+    debugPrint("确定删除");
     }
     },
       child: Text("弹框4"),

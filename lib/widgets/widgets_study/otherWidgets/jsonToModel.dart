@@ -1,4 +1,4 @@
-import 'dart:convert';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pprotapp/models/expressFromId.dart';
@@ -44,7 +44,7 @@ class _JsonToModelSttState extends State<JsonToModelStt> {
          setState(() {
 
            user = ExpressFromId.fromJson(sjson);
-           print("$user");
+           debugPrint("$user");
          });
 
 

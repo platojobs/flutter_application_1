@@ -21,7 +21,7 @@ class _FontanimatdemoState extends State<Fontanimatdemo> with SingleTickerProvid
             .animate(controller)
             ..addListener((){
                setState(() {
-                 print(tween.value);
+                 debugPrint("${tween.value}");
                });
             });
     controller.forward();

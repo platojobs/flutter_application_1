@@ -16,7 +16,7 @@ class _SingleChoiceSegmentState extends State<SingleChoiceSegment> {
   var selction;
   @override
   Widget build(BuildContext context) {
-    print(widget.defaultSelect);
+    debugPrint(widget.defaultSelect);
     return SizedBox(
       height: 50,
       child: SegmentedButton(
@@ -27,7 +27,7 @@ class _SingleChoiceSegmentState extends State<SingleChoiceSegment> {
               PJButtonBackGroundColor(context, Colors.blue)
           ),
           expandedInsets: const EdgeInsets.all(0),
-          segments: widget.titles!.toList().map(
+          segments: widget.titles.toList().map(
                   (index)=>ButtonSegment(value: index,label: Text(index)
                   )
           ).toList(),

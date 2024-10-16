@@ -24,7 +24,7 @@ class MyTextField extends StatelessWidget {
               border: OutlineInputBorder(),
             ),
             onChanged: (value) {
-              print(value);
+              debugPrint(value);
             },
           ),
           const SizedBox(
@@ -40,7 +40,7 @@ class MyTextField extends StatelessWidget {
               border: OutlineInputBorder(),
             ),
             onChanged: (value) {
-              print("$value");
+              debugPrint("$value");
             },
           ),
           const SizedBox(
@@ -51,10 +51,10 @@ class MyTextField extends StatelessWidget {
             height: 40,
             child: TextButton(
               onPressed: () {
-                print("点击了按钮");
+                debugPrint("点击了按钮");
                 final username = usernameController.text;
                 final password = passwordController.text;
-                print("账号：$username 密码：$password");
+                debugPrint("账号：$username 密码：$password");
               },
               style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.blue)),

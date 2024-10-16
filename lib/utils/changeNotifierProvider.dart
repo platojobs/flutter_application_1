@@ -25,7 +25,7 @@ class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
 
   static T? of<T>(BuildContext context,{bool listen = true} ){
     final type = _typeOf<InheritedProvider<T>>();
-    print("数据共享保存的类型type: ${type.toString()}");
+    debugPrint("数据共享保存的类型type: ${type.toString()}");
     final provider =listen?context.dependOnInheritedWidgetOfExactType<InheritedProvider<T>>():context.getElementForInheritedWidgetOfExactType<InheritedProvider<T>>()?.widget as InheritedProvider<T> ;
     return provider?.data;
   }

@@ -35,7 +35,6 @@ class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: const  Text("BottomAppBar"),
       ),
       body: ListView(
