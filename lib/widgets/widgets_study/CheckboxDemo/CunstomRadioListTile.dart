@@ -65,36 +65,35 @@ class _LabeledRadioExampleState extends State<LabeledRadioExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LabeledRadioExample"),
+        title: Text("自定义的二选一单选按钮"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            LinkedLabelRadio(
-              label: 'First tappable label text',
-              padding: const EdgeInsets.symmetric(horizontal: 5.0),
-              value: true,
-              groupValue: _isRadioSelected,
-              onChanged: (bool newValue) {
-                setState(() {
-                  _isRadioSelected = newValue;
-                });
-              },
-            ),
-            LinkedLabelRadio(
-              label: 'Second tappable label text',
-              padding: const EdgeInsets.symmetric(horizontal: 5.0),
-              value: false,
-              groupValue: _isRadioSelected,
-              onChanged: (bool newValue) {
-                setState(() {
-                  _isRadioSelected = newValue;
-                });
-              },
-            ),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          LinkedLabelRadio(
+            label: 'First tappable label text',
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            value: true,
+            groupValue: _isRadioSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isRadioSelected = newValue;
+              });
+            },
+          ),
+          LinkedLabelRadio(
+            label: 'Second tappable label text',
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            value: false,
+            groupValue: _isRadioSelected,
+            onChanged: (bool newValue) {
+              setState(() {
+                _isRadioSelected = newValue;
+              });
+            },
+          ),
+
+        ],
       ),
     );
   }

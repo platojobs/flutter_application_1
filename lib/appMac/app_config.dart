@@ -41,6 +41,10 @@ import 'package:flutter_pprotapp/widgets/widgets_study/otherWidgets/state_manage
 import '../widgets/widgets_study/CheckboxDemo/CheckboxListTileDemo.dart';
 import '../widgets/widgets_study/CheckboxDemo/CunstomRadioListTile.dart';
 import '../widgets/widgets_study/CheckboxDemo/RadioListTile.dart';
+import '../widgets/widgets_study/CheckboxDemo/SwitchListTileDemo.dart';
+import '../widgets/widgets_study/ChipDemo/ChipDemo.dart';
+import '../widgets/widgets_study/ChipDemo/FilterChipDemo.dart';
+import '../widgets/widgets_study/ChipDemo/WrapDemo.dart';
 
 class AppConfig{
 
@@ -77,6 +81,10 @@ class AppConfig{
       "CheckboxListTileDemo":(context) =>const CheckboxListTileDemo(),
       "RadioListTileDemo":(context) => const RadioListTileDemo(),
       "LabeledRadioExample":(context)=> const LabeledRadioExample(),
+      "SwitchListTileDemo":(context)=> SwitchListTileDemo(),
+      "ChipDemo":(context)=> ChipDemo(),
+      "FilterChipDemo":(context)=> FilterChipDemo(),
+      "WrapDemo":(context)=>WrapDemo(),
     };
   }
 
@@ -96,6 +104,10 @@ class AppConfig{
       "CheckboxListTileDemo":"CheckboxListTile",
       "RadioListTileDemo":"RadioListTileDemo",
       "LabeledRadioExample":"自定义的单选按钮项",
+      "SwitchListTileDemo":"开关按钮",
+      "ChipDemo":"ChipDemo",
+      "FilterChipDemo":"FilterChipDemo",
+      "WrapDemo":"WrapDemo"
     };
   }
 

@@ -25,6 +25,7 @@ class _InfoPageState extends State<InfoPage> with TickerProviderStateMixin {
     super.dispose();
   }
 
+  //tabbar的使用
   @override
   Widget build(BuildContext context) {
     return Scaffold(

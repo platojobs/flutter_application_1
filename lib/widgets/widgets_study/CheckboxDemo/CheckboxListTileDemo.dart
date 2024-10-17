@@ -68,8 +68,10 @@ class _CheckboxListTileDemoState extends State<CheckboxListTileDemo> {
           ),
           Divider(height: 0,),
           LinkedLabelCheckbox(
-            label: "Linked, tappable label text",
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            label: "Linked, tappable label text，Linked, tappable label textLinked, tappable label textLinked, "
+                "tappable label textLinked, tappable label "
+                "textLinked, tappable label text，Linked, tappable label text",
+            padding: EdgeInsets.all(10),
             value: ischeck4,
             onChanged: (value){
               setState(() {
@@ -77,6 +79,7 @@ class _CheckboxListTileDemoState extends State<CheckboxListTileDemo> {
               });
             },
           ),
+          Divider(height: 0,),
           ListTileTheme(
             textColor: Colors.blueAccent,
             selectedColor: Colors.red,
@@ -89,9 +92,8 @@ class _CheckboxListTileDemoState extends State<CheckboxListTileDemo> {
                 });
               },
             ),
-
-
           ),
+          Divider(height: 0,),
 
 
 

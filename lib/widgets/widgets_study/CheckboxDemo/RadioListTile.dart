@@ -24,15 +24,25 @@ class _RadioListTileDemoState extends State<RadioListTileDemo> {
       appBar: AppBar(
         title: Text("RadioListTile-${S.of(context).season}"),
       ),
-      body: RadioListTileTT(
+      body: Column(
+        children: [
+        RadioListTileTT(
         season: season,
-        onChangeed: (valuse){
+        onChangeed: (valuse) {
           debugPrint("$valuse");
           setState(() {
             season = valuse!;
           });
-        },
-      )
+        }),
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.all(10),
+                child: Text("$season",style: TextStyle(color: Colors.red),),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
@@ -56,6 +66,7 @@ class RadioListTileTT extends StatelessWidget {
               onChangeed!(value);
             },
           ),
+          Divider(height: 0,),
           RadioListTile(
             value: Seasons.summer,
             title: Text(S.of(context).summer),
@@ -66,6 +77,7 @@ class RadioListTileTT extends StatelessWidget {
               onChangeed!(value);
             },
           ),
+          Divider(height: 0,),
           RadioListTile(
             value: Seasons.autumn,
             title: Text(S.of(context).autumn),
@@ -76,6 +88,7 @@ class RadioListTileTT extends StatelessWidget {
               onChangeed!(value);
             },
           ),
+          Divider(height: 0,),
           RadioListTile(
             value: Seasons.winter,
             title: Text(S.of(context).winter),
@@ -86,6 +99,7 @@ class RadioListTileTT extends StatelessWidget {
               onChangeed!(value);
             },
           ),
+          Divider(height: 0,),
         ],
       ),
     );
