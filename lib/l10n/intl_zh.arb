@@ -1,4 +1,5 @@
 {
+  "@@locale": "zh",
   "title": "flutter 国际化",
   "content": "您点击了多次",
   "username": "用户名",

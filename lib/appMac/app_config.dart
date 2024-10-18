@@ -45,6 +45,19 @@ import '../widgets/widgets_study/CheckboxDemo/SwitchListTileDemo.dart';
 import '../widgets/widgets_study/ChipDemo/ChipDemo.dart';
 import '../widgets/widgets_study/ChipDemo/FilterChipDemo.dart';
 import '../widgets/widgets_study/ChipDemo/WrapDemo.dart';
+import '../widgets/widgets_study/DatePickerDemo/DatePickerDemo.dart';
+import '../widgets/widgets_study/MenuAnchorDemo/MenuAnchorDemo.dart';
+import '../widgets/widgets_study/SanmpleDemo1/SampleDemo1.dart';
+import '../widgets/widgets_study/SanmpleDemo1/SampleDemo2.dart';
+import '../widgets/widgets_study/SanmpleDemo1/SampleDemo4.dart';
+import '../widgets/widgets_study/SliderDemo/SliderDemo.dart';
+import '../widgets/widgets_study/TextField/TextFieldDemo.dart';
+import '../widgets/widgets_study/all_widgets/aboutListTile_demo.dart';
+import '../widgets/widgets_study/all_widgets/about_dialog.dart';
+import '../widgets/widgets_study/all_widgets/absorb_pointer.dart';
+import '../widgets/widgets_study/all_widgets/alert_dialog.dart';
+import '../widgets/widgets_study/all_widgets/align.dart';
+import '../widgets/widgets_study/all_widgets/animated_align.dart';
 
 class AppConfig{
 
@@ -85,6 +98,20 @@ class AppConfig{
       "ChipDemo":(context)=> ChipDemo(),
       "FilterChipDemo":(context)=> FilterChipDemo(),
       "WrapDemo":(context)=>WrapDemo(),
+      "DatePickerDemo":(context)=>DatePickerDemo(),
+      "MenuAnchorDemo":(context)=>MenuAnchorDemo(),
+      "SliderDemo":(context)=>SliderDemo(),
+      "TextFieldDemo":(context)=>TextFieldDemo(),
+      "SampleDemo1":(context)=>SampleDemo1(),
+      "SampleDemo2":(context)=>SampleDemo2(),
+      "SampleDemo4":(context)=>SampleDemo4(),
+      "AboutDialogDemo":(context)=>AboutDialogDemo(),
+      "AboutlisttileDemo":(context)=>AboutlisttileDemo(),
+      "AbsorbPointerDemo":(context)=>AbsorbPointerDemo(),
+      "AlertDialogDemo":(context)=>AlertDialogDemo(),
+      "AlignDemo":(context)=>AlignDemo(),
+      "AnimatedAlignDemo":(context)=>AnimatedAlignDemo(),
+
     };
   }
 
@@ -107,9 +134,32 @@ class AppConfig{
       "SwitchListTileDemo":"开关按钮",
       "ChipDemo":"ChipDemo",
       "FilterChipDemo":"FilterChipDemo",
-      "WrapDemo":"WrapDemo"
+      "WrapDemo":"WrapDemo",
+      "DatePickerDemo":"DatePickerDemo",
+      "MenuAnchorDemo":"MenuAnchorDemo",
+      "SliderDemo":"SliderDemo",
+      "TextFieldDemo":"TextFieldDemo",
+      "SampleDemo1":"SampleDemo1",
+      "SampleDemo2":"SampleDemo2",
+      "SampleDemo4":"SampleDemo4",
     };
   }
+
+
+  //组件篇
+  static Map<String,String> allwidgetsRouteMap(){
+    return {
+      "AboutDialogDemo":"AboutDialog",
+      "AboutlisttileDemo":"AboutListTile",
+      "AbsorbPointerDemo":"AbsorbPointer",
+      "AlertDialogDemo":"AlertDialog",
+      "AlignDemo":"Align",
+      "AnimatedAlignDemo":"AnimatedAlign"
+    };
+  }
+
+
+
 
 
 }

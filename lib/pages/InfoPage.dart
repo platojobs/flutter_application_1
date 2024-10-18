@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'all_widgets.dart';
+
 class InfoPage extends StatefulWidget {
   const InfoPage({super.key});
 
@@ -39,7 +41,7 @@ class _InfoPageState extends State<InfoPage> with TickerProviderStateMixin {
             isScrollable: true,
             tabs: const [
               Tab(
-                text: "分类1",
+                text: "组件",
                 icon: Icon(Icons.filter_1),
               ),
               Tab(
@@ -67,75 +69,7 @@ class _InfoPageState extends State<InfoPage> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          CustomScrollView(
-            slivers: [
-              const SliverToBoxAdapter(
-                child: Card(
-                  child: Text("Header0"),
-                ),
-              ),
-              SliverList.builder(
-                itemCount: 20,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      ListTile(
-                        leading: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            // border: Border.all(width: 1,style: BorderStyle.solid),
-                          ),
-                          child: const Icon(
-                            Icons.insert_comment,
-                            color: Colors.white,
-                          ),
-                        ),
-                        title: Text(
-                          "标题:$index",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        subtitle: Text("副标题:$index"),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          size: 15,
-                        ),
-                        onTap: (){
-                          showModalBottomSheet(context: context, builder: (context){
-                            return Container(
-                              height: 180,
-                              padding: EdgeInsets.all(15),
-                              alignment: Alignment.topLeft,
-                              child: Row(
-                                children: [
-                                  IconButton(onPressed: (){}, icon: Icon(Icons.import_contacts_sharp)),
-                                  IconButton(onPressed: (){}, icon: Icon(Icons.person)),
-
-                                ],
-                              ),
-                            );
-                          },
-                            useSafeArea: true,
-
-                          );
-                        },
-                      ),
-                      Divider(
-                        height: 0.5,
-                        indent: 10,
-                        endIndent: 10,
-                      ),
-                    ],
-                  );
-                },
-              ),
-              const SliverToBoxAdapter(
-                child: Card(
-                  child: Text("Footer0"),
-                ),
-              )
-            ],
-          ),
+          AllWidgetsDemo(),
           Center(
             child: Center(
               child: SizedBox(
