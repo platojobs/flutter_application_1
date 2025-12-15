@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/platojobs/opt/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/platojobs/Desktop/Github/gitapp"
+export "FLUTTER_APPLICATION_PATH=/Users/platojobs/Desktop/gitapp_flutter"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
